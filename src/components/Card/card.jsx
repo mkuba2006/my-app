@@ -1,10 +1,12 @@
 import React from 'react';
 import Avatar from './avatar';
+import Name from './name';
+
 function Card(props){
     return (
         <div className='card'>
             <div className='text'>
-                <h2><b>{props.name}</b></h2>
+                <Name name={props.name} />
                 <h3>-{props.text}</h3>
             </div>
             <div className='img'>
