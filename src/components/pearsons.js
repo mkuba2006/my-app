@@ -16,6 +16,12 @@ const pearsons = [
         name:'Billie Joe Armstrong',
         text:'Green Day',
         img:'https://64.media.tumblr.com/avatar_391ddf7d26a1_128.pnj'
+    },
+    {
+        id:'4',
+        name:'Zack de la Rocha',
+        text:'Rage Against The Machine',
+        img:'https://pm1.narvii.com/6959/ba3061ba632ffe55c2a2f728c33140403593ecb0r1-306-460v2_128.jpg'
     }
 ];
 
