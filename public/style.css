@@ -40,10 +40,17 @@ img{
     border-radius: 50%;
 }
 
-.container2{
-    background-color: blue;
+.container1{
+    background-color: rgb(87, 255, 137);
     margin: 10% auto;
     padding: 80px 0;
+    text-align: center;
+}
+
+.container2{
+    background-color: rgb(87, 255, 137);
+    margin: 10% auto;
+    padding: 80px 10px;
     text-align: center;
 }
 input {

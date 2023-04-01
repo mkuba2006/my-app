@@ -11,7 +11,7 @@ function Plus(){
     }
 
     return(
-        <div className='container'>
+        <div className='container1'>
             <h1>{count}</h1>
             <button onClick={plusplus}>+</button>
             <button onClick={plusminus}>-</button>
