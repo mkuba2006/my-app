@@ -1,23 +1,34 @@
 import React, { useState } from "react";
 
 function Form() {
-    const [name, newName] = useState("");
-    const [text, newText] = useState("");
+    
+    const [text, newtext] = useState({fname:"",lname:""});
 
     function change(event){
-        console.log(event.target.value);
-        newName(event.target.value);
+        const {name, value} = event.target;
+
+        newtext(prevValue => {
+            if(name === "fname"){
+                return{
+                    fname: value,
+                    lname: prevValue.lname
+                };
+            } 
+            else if(name === "lname"){
+                return{
+                    lname: value,
+                    fname: prevValue.fname
+                };
+            }
+        });
     }
-    function changeH1(event){
-        newText(name);
-        event.preventDefault();
-    }
-    
+
   return (
     <div className="container2">
-        <form onSubmit={changeH1}>
-            <h1>Hi {text} </h1>
-            <input type="text" placeholder="What's your name?" value={name} onChange={change}/>
+        <h1>Hi {text.fname} {text.lname} </h1>
+        <form>
+            <input value={text.fname} name="fname" onChange={change}/>
+            <input value={text.lname} name="lname" onChange={change}/>
             <button>Submit</button>
         </form>
     </div>
