@@ -1,27 +1,43 @@
 import React, { useState } from "react";
 
 function Form() {
+    // const [name, newName] = useState("");
+    // const [text, newText] = useState("");
+
+    // function change(event){
+    //     console.log(event.target.value);
+    //     newName(event.target.value);
+    // }
+    // function changeH1(event){
+    //     newText(name);
+    //     event.preventDefault();
+    // }
     
+
+
+
+
+
     const [text, newtext] = useState({fname:"",lname:""});
 
     function change(event){
         const {name, value} = event.target;
-
-        newtext(prevValue => {
+        newtext(v => {
             if(name === "fname"){
                 return{
                     fname: value,
-                    lname: prevValue.lname
+                    lname: v.lname
                 };
             } 
             else if(name === "lname"){
                 return{
                     lname: value,
-                    fname: prevValue.fname
+                    fname: v.fname
                 };
             }
         });
     }
+
 
   return (
     <div className="container2">
