@@ -17,23 +17,32 @@ function Form() {
 
 
 
+    // newtext(v => {
+    //     if(name === "fname"){
+    //         return{
+    //             fname: value,
+    //             lname: v.lname
+    //         };
+    //     } 
+    //     else if(name === "lname"){
+    //         return{
+    //             lname: value,
+    //             fname: v.fname
+    //         };
+    //     }
+    // });
+
+
+
 
     const [text, newtext] = useState({fname:"",lname:""});
 
     function change(event){
         const {name, value} = event.target;
         newtext(v => {
-            if(name === "fname"){
-                return{
-                    fname: value,
-                    lname: v.lname
-                };
-            } 
-            else if(name === "lname"){
-                return{
-                    lname: value,
-                    fname: v.fname
-                };
+            return{
+                ...v,
+                [name]: value
             }
         });
     }
