@@ -1,23 +1,30 @@
 import React, { useState } from "react";
-
+import Li from "./ToDoItem";
 
 function List() {
 
     const [item, newitem]= useState("");
     const [items, newitems]= useState([]);
 
-    function change(e){
-        const val= e.target.value;
+    function change(ev){
+        const val= ev.target.value;
         newitem(val);
     }
 
     function addItem(){
-        newitems(e=>{
-            return[...e, item]
+        newitems(previt=>{
+            return[...previt, item]
         })
         newitem("");
     }
 
+    function deleteItem(id) {
+      newitems(previt=>{
+        return previt.filter((item, index)=>{
+          return index !== id;
+        });
+      })
+    }
   return (
     <div className="conta">
       <div className="head">
@@ -31,8 +38,8 @@ function List() {
       </div>
       <div>
         <ul>
-        {items.map(i => (
-            <li>{i}</li>
+        {items.map((Item, index) => (
+            <Li key={index} id={index} text={Item}  onChecked={deleteItem}/>
           ))}
         </ul>
       </div>
