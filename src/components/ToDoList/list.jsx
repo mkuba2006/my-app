@@ -12,8 +12,8 @@ function List() {
     }
 
     function addItem(){
-        newitems(previt=>{
-            return[...previt, item]
+        newitems(e=>{
+            return[...e, item]
         })
         newitem("");
     }
@@ -25,6 +25,9 @@ function List() {
         });
       })
     }
+
+
+    
   return (
     <div className="conta">
       <div className="head">
@@ -32,14 +35,12 @@ function List() {
       </div>
       <div className="form">
         <input type="text" onChange={change} value={item} />
-        <button onClick={addItem}>
-          <span>Add</span>
-        </button>
+        <button onClick={addItem}><span>Add</span></button>
       </div>
       <div>
         <ul>
-        {items.map((Item, index) => (
-            <Li key={index} id={index} text={Item}  onChecked={deleteItem}/>
+          {items.map((Item, index) => (
+              <Li id={index} text={Item} onChecked={deleteItem}/>
           ))}
         </ul>
       </div>
